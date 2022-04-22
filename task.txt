@@ -1,3 +1,11 @@
+@app.route("/candidates/<int:candidate_id>")
+def candidate(candidate_id):
+    candidates_list = get_candidates('candidates.json')
+    selected_candidate = candidate_selection_by_id(candidates_list, candidate_id)
+    image = f'<img src="{selected_candidate["picture"]}" alt="Тут должна была быть картинка" height="300">'
+    return image + formatted_candidates([selected_candidate])
+
+
 # Урок 11. Домашнее задание
 
 На этой неделе мы начали работу с веб-фреймворками и создали первое приложение на Flask.  Как вам, нравится? Надеемся, что первые шаги веб-разработчика вам уже по душе и с каждой новой темой будет всё интереснее и интереснее!
