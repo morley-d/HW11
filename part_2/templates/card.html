@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block base %}
+    <h1>{{candidate['name']}}</h1>
+    <p>{{candidate['position']}}</p>
+    <img src="{{candidate['picture']}}" width=200/>
+    <p>{{candidate['skills']}}</p>
+{% endblock %}

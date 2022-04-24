@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block base %}
-    <h1>Все кандидаты</h1>
-    {% for candidate in candidates %}
+<h2>Найдено со скиллом <ins>{{skill_name}}</ins>: {{list_by_skill | length}}</h2>
+    {% for candidate in list_by_skill %}
         <p><a href="/candidate/{{candidate['id']}}">{{candidate['name']}}</a></p>
     {% endfor %}
 {% endblock %}
