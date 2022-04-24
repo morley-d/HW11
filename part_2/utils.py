@@ -1,21 +1,13 @@
 import json
 
 
+# загрузка исходных данных из json файла
 def load_candidates_from_json(path):
     with open(path, 'r', encoding='utf-8') as file:
         return json.load(file)
 
 
-# (?)преобразует исходный список словарей в словарь, где ключ - ИД, значение - экземпляр класса Person
-# def formatted_candidates(candidates_list):
-#     basa_candidasa = {}
-#     for candidate in candidates_list:
-#         person = Person(candidate["id"], candidate["name"], candidate["picture"], candidate["position"],
-#                         candidate["gender"], candidate["age"], candidate["skills"])
-#         basa_candidasa[candidate["id"]] = person
-#     return basa_candidasa
-
-
+# из списка выбирается кандидат с заданным ID
 def candidate_selection_by_id(candidate_id):
     candidates_list = load_candidates_from_json("candidates.json")
     for candidate in candidates_list:
@@ -23,6 +15,7 @@ def candidate_selection_by_id(candidate_id):
             return candidate
 
 
+# из списка выбирается кандидат с заданным именем
 def candidate_selection_by_name(candidate_name):
     candidates_list = load_candidates_from_json("candidates.json")
     result = []
@@ -33,6 +26,7 @@ def candidate_selection_by_name(candidate_name):
     return result
 
 
+# из списка выбираются кандидаты с заданным скиллом
 def candidate_selection_by_skill(candidate_skill):
     candidates_list = load_candidates_from_json("candidates.json")
     result = []
