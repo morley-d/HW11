@@ -1,6 +1,3 @@
-# get page
-# test HTML
-
 from flask import Flask
 from flask import render_template
 
